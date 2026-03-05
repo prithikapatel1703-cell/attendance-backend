@@ -6,8 +6,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Deployment: set these in environment (or .env) for production/college use
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "demo-secret-key-change-in-production")
 DEBUG = os.environ.get("DJANGO_DEBUG", "True").lower() in ("1", "true", "yes")
-ALLOWED_HOSTS = [h.strip() for h in os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")]
-
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "attendance-backend-hdsl.onrender.com"
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
